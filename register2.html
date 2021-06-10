@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script>
+        function submit1(){
+            var emailreg=/^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-za-z]{2,5}$/;
+            var letters=/^[A-za-z]+$/;
+            var fname=document.form1.fn.value;
+            var pass=document.form1.pwd.value;
+            var conpwd=document.form1.pwd2.value;
+            var email=document.form1.email.value;
+            var mobno=document.form1.number1.value;
+            var gen=document.form1.g.value;
+            // var dob=document.form1.d.value;
+            var state=document.form1.s.value;
+            if(fname==""){
+                alert("Enter your name");
+                return false;
+            }
+            if(!letters.test(fname)){
+                alert("Enter proper name");
+                return false;
+            }
+            if(pass==""){
+                alert("Enter password");
+                return false;
+            }
+            if(pass.length <=6 || pass.length >=10){
+                alert("Enter password upto 6 to 10 character");
+                return false;
+            }
+            if(conpwd==""){
+                alert("Enter confirm password");
+                return false;
+            }
+            if(conpwd!=pass){
+                alert("password doesn't match");
+                return false;
+            }
+            if(email==""){
+                alert("Enter your Email Address");
+                return false;
+            }
+            if(!emailreg.test(email)){
+                alert("Enter proper Email Address");
+                return false;
+            }
+            if(mobno==""){
+                alert("Enter mobile number");
+                return false;
+            }
+            if(mobno.length<10 || mobno.length>10){
+                alert("Enter 10-digit Mobile number");
+                return false;
+            }
+            if(gen==""){
+                alert("Select your gender");
+                return false;
+            }
+            // if(document.form1.radiobutton[0].checked==false && document.form1.radiobutton[1].checked==false){
+            //     alert("Select any gender");
+            //     return false;
+            // }
+            // if(d==""){
+            //     alert("Enter date of birth");
+            //     return false;
+            // }
+            // if(dateofbirth!=DD-MM-YYYY){
+            //     alert("Enter date of birth in proper manner(DD-MM-YYYY)");
+            //     return false;
+            // }
+            if(state=="-"){
+                alert("Select proper state");
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        form{
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar {
+            font-family: 'Baloo Bhai 2', cursive;
+            justify-content: flex-start;
+            background: #0a1352;
+            display: flex;
+        }
+
+        .navbar a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            /* font-weight: bold; */
+            /* text-transform: uppercase; */
+            padding: 14px 20px;
+        }
+
+        .navbar li a:hover {
+            background: pink;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+        #toggle {
+            display: none;
+        }
+
+        .togglearea {
+            background-color: #0a1352;
+            border-bottom: 2px solid white;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .togglearea label {
+            background-color: white;
+            height: 45px;
+            width: 45px;
+            color: black;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .togglearea label span {
+            background-color: black;
+            height: 4px;
+            width: 70%;
+            margin: 4px 0px;
+        }
+
+        .togglearea {
+            display: none;
+        }
+        ul li a:hover{
+        border-radius: 10px;
+        padding: 0.5em;
+        text-decoration: none;
+      }
+      input#sub:hover{
+        width: 20em;
+        color: darkblue;
+        background-color: white; 
+      }
+          ul div#rt{
+            width: 80em;
+            height: 2em;
+            margin-top: 1em;
+            margin-right: 0em;
+            padding-right: 0em;
+          }
+          ul div#rt{
+            width: 100%;
+
+          }
+        @media screen and (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                display: none;
+
+            }
+
+            #toggle:checked+.navbar {
+                display: flex;
+            }
+
+            .togglearea {
+                display: flex;
+            }
+        }
+
+        body {
+            /* background-image:repeating-radial-gradient(circle,red,blue,pink); */
+            background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgb(40, 126, 155));
+            background-clip: border-box; 
+            
+
+        }
+
+        #sub {
+            border-radius: 5px;
+            width: 74px;
+            height: 36px;
+            margin-top: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(45deg, #0000008c, transparent);
+        }
+
+    </style>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav style="height: 7em;margin-top: -5em;">
+          <ul class="navbar" align="right" style="background-image: logo.jpg;height: 5em;padding-top:0.3em">
+          <li style="float: left;color: white;font-size: 40px;margin: 0em 2em;margin-left: 0em; text-shadow: 12px 5px 3px rgb(40,126,155);">Natural4art</li>
+          <div id="rt">
+            <ul>
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="register2.html">Register/Login</a></li>
+            </ul>
+          </div>
+            </ul>        
+    </nav>
+        <div class="second">
+            <div class="togglearea">
+                <label for="toggle">
+                    <span>Home </span>
+                    <span>Services </span>
+                    <span>About Us </span>
+                </label>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br>
+    <h1 align="center" style="margin-top: 30px;">Register Here</h1>
+    <p align="center" style="margin-top: 5px;"> Please fill the details to create an account with us</p>
+    <form name=form1 method="POST" action="action.php"  onsubmit="submit1()">
+        <table border="1" align="center" width="400" bgcolor="#CCCCCC" >
+                <tr>
+                    <th style="background: none;"> Name</th>
+                    <td><input type="text" name="fn" id="fn1" maxlength="30" title="Enter your name"
+                        placeholder="Enter your first and last name" size="30"  /></td>
+                    </tr>
+                    
+                    <tr>
+                        <th>Password</th>
+                        <td><input type="password" name="pwd" id="pwd1" placeholder="Enter your password" maxlength="15"
+                            size="30" /></td>
+                        </tr>
+                        <tr>
+                            <th>Confirm Password</th>
+                            <td><input type="password" name="pwd2" id="pwd1" placeholder="Re-Enter your password" size="30" /></td>
+                        </tr>
+                        <tr>
+                            <th> Email</th>
+                            <td><input type="email" name="email" id="email1" placeholder="Enter your email id" size="30" /></td>
+            </tr>
+            <tr>
+                <th>Mobile Number</th>
+                <td><input type="number" name="number1" id="number2" placeholder="Enter your mobile number" size="30"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td><textarea name="add" id="address" rows="8" cols="20" size="30"
+                    placeholder="Enter your current address"></textarea></td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>
+                        Male<input type="radio" name="g" id="gender" value="m" />
+                        Female<input type="radio" name="g" id="gender" value="f" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Interest</th>
+                <td>
+                    <select name="interest" multiple id="Interest" >
+                        <option value="-" selected="selected" disabled="disabled">Select your Interest</option>
+                        <option value="1">Articals</option>
+                        <option value="2">Poems</option>
+                        <option value="3">Blogs</option>
+                        <option value="4">Arts</option>
+                        <option value="5">PhotoGraphy</option>
+                    </select>
+                    <span>Note: You can select multiple interest</span>
+                </td>
+            </tr>
+            <tr>
+                <th>Address of organization</th>
+                <td><textarea name="adde" id="address" rows="8" cols="20" size="30"
+                    placeholder="If you have organization then enter the address of organization"></textarea> </td>
+                </tr>
+                <tr>
+                    <th>DOB</th>
+                    <td><input type="text" name="dob" id="dob1" placeholder="dd/mm/yyyy"/></td>
+                </tr>
+                <tr>
+                    <th>State</th>
+                    <td>
+                        <select name="s" id="state">
+                            <option value="-" selected="selected" disabled="disabled">Select your state</option>
+                            <option id="state" value="1" >andhrapradesh</option>
+                            <option id="state" value="2">Arunachal Pradesh</option>
+                            <option id="state" value="3">Assam</option>
+                            <option id="state" value="4">Bihar</option>
+                            <option id="state" value="5">chhatisgarh</option>
+                            <option id="state" value="6">Goa</option>
+                            <option id="state" value="7">Gujarat</option>
+                            <option id="state" value="8">Hariyana</option>
+                            <option id="state" value="9">Himachal Pradesh</option>
+                            <option id="state" value="10">Jammu Kashmir</option>
+                            <option id="state" value="11">Jharkhand</option>
+                            <option id="state" value="12">Karnataka</option>
+                            <option id="state" value="13">karala</option>
+                            <option id="state" value="14">Madhya Pradesh</option>
+                            <option id="state" value="15">Maharashtra</option>
+                            <option id="state" value="16">Manipur</option>
+                            <option id="state" value="17">Meghalaya</option>
+                            <option id="state" value="18">Mizoram</option>
+                            <option id="state" value="19">Nagaland</option>
+                            <option id="state" value="20">Orissa</option>
+                            <option id="state" value="21">Panjab</option>
+                            <option id="state" value="22">Rajasthan</option>
+                            <option id="state" value="23">Sikkim</option>
+                            <option id="state" value="24">Tamilnadu</option>
+                            <option id="state" value="25">Tripura</option>
+                            <option id="state" value="26">Uttarakhand</option>
+                            <option id="state" value="27">Utter Pradesh</option>
+                            <option id="state" value="28">West Bengal</option>
+                            <option id="state" value="29">Andaman and Nicobar Islands</option>
+                            <option id="state" value="30">chandigarh</option>
+                            <option id="state" value="31">Dadra and Nagar haveli</option>
+                            <option id="state" value="32">Daman and Diu</option>
+                            <option id="state" value="33">Dilhi</option>
+                            <option id="state" value="34">Lakshadweep</option>
+                            <option id="state" value="35">Pondicherry</option>
+                        </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Submit" name="submit"/>
+                    <input type="reset" value="Reset" />
+                </td>
+            </tr>
+        </table>
+        <!-- <p align="center">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
+    </form>    
+        <div class="container signin">
+            <p align="center">Already have an account? <a href="login.html">Sign in</a></p>
+        </div>
+    <footer style="height: 105px;">
+        <span style="margin-left: 5px;">Contact Us:</span>
+        <span style="margin-left:2px">Mo.no: 9815236447</span><br>
+        <div id="icon">
+            <a id="i" href="#"><i class="fa fa-facebook"></i></a>
+            <a id="i" href="#"><i class="fa fa-instagram"></i></a>
+            <a id="i" href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+        <br>
+        <span id="copy" style="margin-left:450px;"><br>
+            &copy;Copyright@2005abc.All Rights Reserved.
+        </span>
+    </footer>
+</body>
+
+</html>
